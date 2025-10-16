@@ -20,5 +20,18 @@
   "workspaces": [
     "apps/*",
     "packages/*"
-  ]
+  ],
+  "dependencies": {
+    "@tailwindcss/vite": "^4.1.14",
+    "bcrypt": "^6.0.0",
+    "dotenv": "^17.2.3",
+    "express": "^5.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "mailparser": "^3.7.5",
+    "mongoose": "^8.19.1",
+    "nodemailer": "^7.0.9",
+    "react-router-dom": "^7.9.4",
+    "smtp-server": "^3.15.0",
+    "tailwindcss": "^4.1.14"
+  }
 }
