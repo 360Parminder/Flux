@@ -63,9 +63,52 @@ exports.login = async (req, res, next) => {
 
 exports.signup = async (req, res, next) => {
   try {
+    // 1) Check if the email and password are provided
+    if (!req.body.email || !req.body.password || !req.body.passwordConfirm) {
+      return next(
+        new AppError(400, "fail", "Please provide email and password"),
+        req,
+        res,
+        next,
+      );
+    }
+    // 2) Check if the mail is allowed domain
+    const allowedDomains = ["rajdoot.wtf"];
+    const emailDomain = req.body.email.split("@")[1].toLowerCase();
+    if (!allowedDomains.includes(emailDomain)) {
+      return next(
+        new AppError(400, "fail", "Email domain is not allowed"),
+        req,
+        res,
+        next,
+      );
+    }
+    if (req.body.password !== req.body.passwordConfirm) {
+      return next(
+        new AppError(400, "fail", "Password and Confirm Password do not match"),
+        req,
+        res,
+        next,
+      );
+    }
+
+      
+    // 3) Check if the email is already registered
+    const usermail = await User.findOne({ email: req.body.email.toLowerCase() });
+    if (usermail) {
+      return next(
+        new AppError(400, "fail", "Email is already registered"),
+        req,
+        res,
+        next,
+      );  
+    }
+
+
+    // Create user
     const user = await User.create({
       name: req.body.name,
-      email: req.body.email,
+      email: req.body.email.toLowerCase(),
       password: req.body.password,
       passwordConfirm: req.body.passwordConfirm,
       role: req.body.role,
