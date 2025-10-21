@@ -19,7 +19,6 @@ router
     .route('/')
     .get(userController.getAllUsers);
 
-
 router
     .route('/:id')
     .get(userController.getUser)
