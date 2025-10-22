@@ -13,7 +13,9 @@ const AppError = require('./utils/appError');
 const app = express();
 
 // Allow Cross-Origin requests
-app.use(cors());
+app.use(cors(
+    {origin: true, credentials: true}
+));
 
 // Set security HTTP headers
 app.use(helmet());

@@ -12,17 +12,18 @@ router.use(authController.protect);
 
 router.delete('/deleteMe', userController.deleteMe);
 
+router
+    .route('/profile')
+    .get(userController.getUser)
+    .patch(userController.updateUser)
+    
 // Only admin have permission to access for the below APIs 
 router.use(authController.restrictTo('admin'));
 
 router
     .route('/')
-    .get(userController.getAllUsers);
-
-router
-    .route('/:id')
-    .get(userController.getUser)
-    .patch(userController.updateUser)
+    .get(userController.getAllUsers)
     .delete(userController.deleteUser);
+
 
 module.exports = router;

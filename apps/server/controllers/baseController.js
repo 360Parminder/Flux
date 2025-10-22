@@ -20,7 +20,7 @@ exports.deleteOne = Model => async (req, res, next) => {
 
 exports.updateOne = Model => async (req, res, next) => {
     try {
-        const doc = await Model.findByIdAndUpdate(req.params.id, req.body, {
+        const doc = await Model.findByIdAndUpdate(req.user._id, req.body, {
             new: true,
             runValidators: true
         });
@@ -59,22 +59,26 @@ exports.createOne = Model => async (req, res, next) => {
 
 exports.getOne = Model => async (req, res, next) => {
     try {
-        const doc = await Model.findById(req.params.id);
-
-        if (!doc) {
-            return next(new AppError(404, 'fail', 'No document found with that id'), req, res, next);
+      const userId = req.user.id;
+  
+      const doc = await Model.findById(userId)
+        // .populate('plan.plans.planId'); // ✅ populate the nested plan details
+  
+      if (!doc) {
+        return next(new AppError(404, 'fail', 'No document found with that id'), req, res, next);
+      }
+  
+      res.status(200).json({
+        status: 'success',
+        data: {
+          user: doc,
         }
-
-        res.status(200).json({
-            status: 'success',
-            data: {
-                doc
-            }
-        });
+      });
     } catch (error) {
-        next(error);
+      next(error);
     }
-};
+  };
+  
 
 exports.getAll = Model => async (req, res, next) => {
     try {
@@ -96,4 +100,32 @@ exports.getAll = Model => async (req, res, next) => {
         next(error);
     }
 
+};
+
+// profile picture update
+exports.updateProfilePicture = Model => async (req, res, next) => {
+    try {
+        if (!req.file) {
+            return next(new AppError(400, 'fail', 'No file uploaded'), req, res, next);
+        }
+        const userId = req.user.id;
+        const doc = await Model.findByIdAndUpdate(userId, { image: req.file.path }, {
+            new: true,
+            runValidators: true
+        });
+
+        if (!doc) {
+            return next(new AppError(404, 'fail', 'No document found with that id'), req, res, next);
+        }
+
+        res.status(200).json({
+            status: 'success',
+            data: {
+                user: doc
+            }
+        });
+
+    } catch (error) {
+        next(error);
+    }
 };

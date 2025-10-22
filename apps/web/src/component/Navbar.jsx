@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom"
+import { useAuth } from "../hook/useAuth";
 
 const Navbar = () => {
+  const { user, loggedIn } = useAuth();
   return (
     <nav className="flex justify-center sticky top-2 z-50 w-full">
       <div className="flex min-w-5xl justify-between items-center p-4 bg-gray-200 rounded-2xl">
@@ -13,11 +15,24 @@ const Navbar = () => {
         <li><Link to="/contact">Contact</Link></li>
       </ul>
       <div className="flex-grow">
-        <div className="avatar">
-          <div className="w-10 rounded-full">
-            <img src="https://placeimg.com/192/192/people" />
+      {
+        loggedIn ? (
+          <div className="flex items-center space-x-2 justify-end">
+            <span>Welcome, {user?.name}</span>
+            {user?.image && (
+              <img
+                src={user.image}
+                alt="Profile"
+                className="w-8 h-8 rounded-full object-cover"
+              />
+            )}
           </div>
-        </div>
+        ) : (
+          <Link to="/login" className="px-4 py-2 bg-blue-500 text-white rounded">
+            Login
+          </Link>
+        )
+      }
       </div>
       </div>
     </nav>
