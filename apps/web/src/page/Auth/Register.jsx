@@ -21,7 +21,7 @@ const Register = () => {
                 {/* Registration form fields go here */}
                 <div>
                     <label htmlFor="name" className="block text-white">Name</label>
-                    <input type="text" onChange={(e) => setUser({ ...user, name: e.target.value })} id="name" name="name" required className="mt-1 block w-full p-2 rounded" />
+                    <input type="text" onChange={(e) => setUser({ ...user, name: e.target.value })} id="name" name="name" required className="mt-1 block w-full p-2 rounded text-white" />
                 </div>
                 <div>
                     <label htmlFor="email" className="block text-white">Email</label>
@@ -29,11 +29,11 @@ const Register = () => {
                 </div>
                 <div>
                     <label htmlFor="password" className="block text-white">Password</label>
-                    <input type="password" onChange={(e) => setUser({ ...user, password: e.target.value })} id="password" name="password" required className="mt-1 block w-full p-2 rounded" />
+                    <input type="password" onChange={(e) => setUser({ ...user, password: e.target.value })} id="password" name="password" required className="mt-1 block w-full p-2 rounded text-white" />
                 </div>
                 <div>
                     <label htmlFor="confirmPassword" className="block text-white">Confirm Password</label>
-                    <input type="password" onChange={(e) => setUser({ ...user, confirmPassword: e.target.value })} id="confirmPassword" name="confirmPassword" required className="mt-1 block w-full p-2 rounded" />
+                    <input type="password" onChange={(e) => setUser({ ...user, confirmPassword: e.target.value })} id="confirmPassword" name="confirmPassword" required className="mt-1 block w-full p-2 rounded text-white" />
                 </div>
                 <button type="submit" className="mt-4 bg-blue-500 text-white p-2 rounded">Register</button>
             </form>
