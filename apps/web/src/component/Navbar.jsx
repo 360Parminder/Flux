@@ -5,9 +5,9 @@ const Navbar = () => {
   const { user, loggedIn } = useAuth();
   return (
     <nav className="flex justify-center sticky top-2 z-50 w-full">
-      <div className="flex min-w-5xl justify-between items-center p-4 bg-gray-200 rounded-2xl">
+      <div className="flex min-w-5xl justify-between items-center p-4 bg-neutral-100 rounded-2xl border-[2px] border-amber-400/40 shadow-md">
         <Link to="/" className="text-lg font-bold">
-        <img src="/vite.svg" alt="" />
+        <img src="/icon.png" className=" size-10" alt="" />
         </Link>
         <ul className="flex space-x-4 ml-4">
         <li><Link to="/">Home</Link></li>

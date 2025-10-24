@@ -4,6 +4,7 @@ import Landing from "./page/Landing"
 import { useAuth } from "./hook/useAuth";
 import Login from "./page/Auth/Login";
 import Register from "./page/Auth/Register";
+import DashboardLayout from "./layout/dashboardlayout";
 
 const App = () => {
 
@@ -20,7 +21,7 @@ const App = () => {
         <Route path="about" element={<h2>About Page</h2>} />
         <Route path="contact" element={<h2>Contact Page</h2>} />
       </Route>
-      <Route path="/dashboard" element={<h1>Dashboard for {user?.name}</h1>} >
+      <Route path="/dashboard" element={<DashboardLayout />} >
         
       </Route>
       

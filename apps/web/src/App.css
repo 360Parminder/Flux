@@ -5,3 +5,8 @@
   text-align: center;
 }
 
+@keyframes gradient-shift {
+  0% { opacity: 0.8; }
+  100% { opacity: 1; }
+}
+
