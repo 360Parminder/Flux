@@ -7,7 +7,7 @@ const DashboardLayout = () => {
     const { user } = useAuth();
    
     return (
-        <div className="w-screen h-screen flex flex-row bg-neutral-200 dark:bg-neutral-900">
+        <div className="w-screen min-h-screen flex flex-row bg-neutral-200 dark:bg-neutral-900">
             <div className="w-[20%]">
                 <div>
                     <div className="rounded-full bg-neutral-200 dark:bg-neutral-800 w-10 h-10 flex items-center justify-center">

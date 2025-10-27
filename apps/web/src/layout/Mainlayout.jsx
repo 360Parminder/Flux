@@ -4,43 +4,44 @@ import Footer from "../component/Footer";
 
 const MainLayout = () => {
   return (
-    <div className="relative min-h-screen flex flex-col">
+    <div className="relative min-h-screen flex flex-col bg-[#FF9F47]/10 overflow-hidden">
       {/* Grid overlay */}
-      <div className="absolute inset-0 -z-10 h-full w-full bg-[linear-gradient(to_right,#73737320_1px,transparent_1px),linear-gradient(to_bottom,#73737320_1px,transparent_1px)] bg-[size:20px_20px]"></div>
+      
 
       {/* Randomized decorative elements */}
       <div 
         className="bg-[#FF9F47] absolute -z-10 rounded-full" 
-        style={{ top: '22vh', left: '-6vw', width: '40px', height: '50px', filter: 'blur(35px)', opacity: 0.88, transform: 'rotate(163deg)' }}
-      ></div>
+        style={{ top: '30vh', left: '1vw', width: '20rem', height: '10rem', filter: 'blur(50px)', opacity: '0.5', transform: 'rotate(170deg)' }}
+        ></div>
       <div 
         className="bg-[#FF9F47] absolute -z-10 rounded-lg" 
-        style={{ top: '9vh', left: '77vw', width: '48px', height: '48px', filter: 'blur(38px)', opacity: 0.39, transform: 'rotate(274deg)', borderRadius: '25%' }}
-      ></div>
+        style={{ top: '45vh', left: '77vw', width: '23rem', height: '10rem', filter: 'blur(50px)', opacity: '0.6', transform: 'rotate(24deg)', borderRadius: '25%' }}
+        ></div>
       <div 
         className="bg-[#FF9F47] absolute -z-10" 
-        style={{ top: '35vh', left: '39vw', width: '28px', height: '28px', filter: 'blur(27px)', opacity: 0.12, transform: 'rotate(22deg)', borderRadius: '0%' }}
-      ></div>
+        style={{ top: '65vh', left: '60vw', width: '35rem', height: '15rem', filter: 'blur(50px)', opacity: '0.6', transform: 'rotate(22deg)', borderRadius: '0%' }}
+        ></div>
       <div 
         className="bg-[#FF9F47] absolute -z-10" 
-        style={{ top: '58vh', left: '12vw', width: '33px', height: '33px', filter: 'blur(23px)', opacity: 0.39, transform: 'rotate(96deg)', borderRadius: '0%' }}
-      ></div>
-      <div 
+        style={{ top: '47%', left: '5vw', width: '10rem', height: '15rem', filter: 'blur(50px)', transform: 'rotate(96deg)', borderRadius: '0%' }}
+        ></div>
+      {/* <div 
         className="bg-[#FF9F47] absolute -z-10 rounded-full" 
-        style={{ top: '24vh', left: '76vw', width: '29px', height: '29px', filter: 'blur(37px)', opacity: 0.3, transform: 'rotate(71deg)' }}
-      ></div>
-      <div 
+        style={{ top: '24vh', left: '60vw', width: '3rem', height: '8rem', filter: 'blur(30px)', transform: 'rotate(71deg)' }}
+        ></div> */}
+      {/* <div 
         className="bg-[#FF9F47] absolute -z-10 rounded-lg" 
-        style={{ top: '49vh', left: '70vw', width: '28px', height: '28px', filter: 'blur(45px)', opacity: 0.13, transform: 'rotate(285deg)', borderRadius: '25%' }}
-      ></div>
+        style={{ top: '49vh', left: '70vw', width: '15rem', height: '10rem', filter: 'blur(30px)', transform: 'rotate(285deg)', borderRadius: '25%' }}
+        ></div> */}
       <div 
         className="bg-[#FF9F47] absolute -z-10 rounded-full" 
-        style={{ top: '8vh', left: '-10vw', width: '43px', height: '43px', filter: 'blur(60px)', opacity: 0.23, transform: 'rotate(132deg)' }}
+        style={{ top: '-10vh', left: '-4vw', width: '25rem', height: '20rem', filter: 'blur(70px)', opacity: '0.5', transform: 'rotate(132deg)' }}
       ></div>
-      <div 
+      {/* <div 
         className="bg-[#FF9F47] absolute -z-10 rounded-full" 
-        style={{ top: '9vh', left: '30vw', width: '48px', height: '48px', filter: 'blur(38px)', opacity: 0.37, transform: 'rotate(21deg)' }}
-      ></div>
+        style={{ top: '39vh', left: '20vw', width: '19rem', height: '12rem', filter: 'blur(40px)', opacity: '0.5', transform: 'rotate(21deg)' }}
+        ></div> */}
+        <div className="absolute inset-0 -z-10 h-full w-full bg-[linear-gradient(to_right,#ffffff_1px,transparent_1px),linear-gradient(to_bottom,#ffffff_1px,transparent_1px)] bg-[size:50px_50px]"></div>
 
       <Navbar />
       <main>
