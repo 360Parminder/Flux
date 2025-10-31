@@ -364,10 +364,10 @@ const DashboardLayout = () => {
     return (
         <div className="w-screen min-h-screen flex flex-row bg-neutral-200 dark:bg-neutral-900 text-neutral-900 dark:text-neutral-100">
             {/* Sidebar */}
-            <div className="w-64 flex-shrink-0 p-4 border-r border-neutral-300 dark:border-neutral-700">
+            <div className="w-64 flex-shrink-0 p-4">
                 <div className="flex flex-row justify-between items-center mb-6">
-                    <div className="rounded-full bg-neutral-800 dark:bg-neutral-100 w-10 h-10 flex items-center justify-center">
-                        <p className="text-neutral-100 dark:text-neutral-900 text-sm font-medium">
+                    <div className="rounded-full bg-neutral-800 dark:bg-neutral-100 size-8 flex items-center justify-center">
+                        <p className="text-neutral-100 dark:text-neutral-900 text-lg font-medium">
                             {getUserInitials(user?.name)}
                         </p>
                     </div>
@@ -405,10 +405,11 @@ const DashboardLayout = () => {
                         ))}
                     </ul>
                 </nav>
+                
             </div>
 
             {/* Message List */}
-            <div className="w-96 flex-shrink-0 bg-neutral-100 dark:bg-neutral-800/30 border-r border-neutral-300 dark:border-neutral-700 flex flex-col">
+            <div className="w-96 my-4 flex-shrink-0 bg-neutral-100 dark:bg-neutral-800/30 rounded border  border-neutral-300 dark:border-neutral-700 flex flex-col">
                 <div className="p-4 border-b border-neutral-300 dark:border-neutral-700">
                     <div className="flex flex-row justify-between items-center mb-2">
                         <button className="flex flex-row items-center space-x-2 hover:bg-neutral-300 dark:hover:bg-neutral-800 px-2 py-1 rounded transition-colors">
